@@ -212,9 +212,11 @@ end
 -- BST gearsets
 function init_gear_sets()
     -- AUGMENTED GEAR
-    Pet_PDT_AxeMain = "Izizoeksi"
+    -- Pet_PDT_AxeMain = "Izizoeksi"
+    Pet_PDT_AxeMain = {name="Kumbhakarna", augments={'Pet: Phys. dmg. taken -4%',}}
     -- Pet_PDT_AxeSub = "Astolfo"
-    Pet_PDT_AxeSub = {name="Kumbhakarna", augments={'Pet: Phys. dmg. taken -4%',}}
+    -- Pet_PDT_AxeSub = {name="Kumbhakarna", augments={'Pet: Phys. dmg. taken -4%',}}
+    Pet_PDT_AxeSub = "Guichard's axe +3"
     Pet_MDT_AxeMain = "Izizoeksi"
     Pet_MDT_AxeSub = {name="Digirbalag", augments={'"Store TP"+3','Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: Attack+29 Pet: Rng.Atk.+29','DMG:+14',}}
 
@@ -222,6 +224,7 @@ function init_gear_sets()
     Mantle_DT = {name= "Pastoralist's Mantle", augments={"STR+2 DEX+2", "Accuracy+2", "Pet: Damage taken -5%"}}
 
     Ready_Atk_Axe = {name="Kumbhakarna", augments={'Pet: Attack+20 Pet: Rng.Atk.+20','Pet: "Dbl.Atk."+3 Pet: Crit.hit rate +3','Pet: TP Bonus+200',}}
+    -- Ready_Atk_Axe = "Skeggiold"
     Ready_Acc_Axe = {name="Kumbhakarna", augments={'Pet: Accuracy+20 Pet: Rng. Acc.+20','Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Pet: TP Bonus+180',}}
     Ready_Acc_Axe2 = "Arktoi"
     Ready_Acc_Axe3 = {name="Digirbalag", augments={'"Store TP"+3','Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: Attack+29 Pet: Rng.Atk.+29','DMG:+14',}}
@@ -379,7 +382,7 @@ function init_gear_sets()
 
     sets.precast.JA['Feral Howl'] = sets.enmity
 
-    sets.precast.JA.Reward = {ammo="Pet Food Zeta",
+    sets.precast.JA.Reward = {ammo="Pet Food Theta",
         head="Khimaira Bonnet",neck="Noetic Torque",ear1="Ferine Earring",ear2="Neptune's Pearl",
         body="Totemic Jackcoat +1",hands="Buremte Gloves",ring1="Leviathan Ring",ring2="Leviathan Ring +1",
         back="Pastoralist's Mantle",waist="Engraved Belt",legs="Totemic Trousers ",feet="Totemic Gaiters "}

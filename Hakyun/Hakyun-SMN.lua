@@ -224,7 +224,7 @@ function init_gear_sets()
 	    sub="Vox Grip",
 	    ammo="Seraphicaller",
 	    neck="Eidolon Pendant +1",
-	    waist="Moepapa stone",
+	    waist="Caller's Sash",
 	    left_ear="Domesticator earring",
 	    --right_ear="Andoaa earring",
 	    right_ear="Influx earring",
@@ -425,15 +425,16 @@ function init_gear_sets()
 	    main="Sucellus",--5
 	    sub="Chanter's Shield",--3 
 	    --head="Vanya hood", --10
-	    head="Helios Jacket", -- 5
+	    head="Helios Circlet", -- 5
 	    neck="Orunmila's Torque",--5
 	    right_ear="Loquacious earring",--2
 	    ear1="Enchntr. Earring +1",--2
 	    hands={ name="Telchine Gloves", augments={'"Fast Cast"+3',}}, --3
 	    --body="Marduk's jubbah +1",-- +6
-	    body="Shango Robe", --8
-	    --ring1="Weatherspoon ring",--5
-	    left_ring="Prolix ring", -- 2
+	    body="Helios Coat", --8
+	    -- body="Shango Robe", --8
+	    ring1="Weatherspoon ring",--5
+	    ring2="Prolix ring", -- 2
 	    back="Swith cape ", --4
 	    waist="Witful belt", --3
 	    legs="Psycloth Lappas", --7
@@ -482,7 +483,7 @@ function init_gear_sets()
     sets.precast.WS['Myrkr'] = {}
     if shattersoul_set then
 	    sets.precast.WS['Shattersoul'] = { --stack INT and MAB, it's a magical WS, this isn't a very good set for it ;p
-		    head="Apogee Crown +1",
+		    head="Apogee Crown",
 		    body="Witching Robe",
 		    hands="Apogee Mitts",
 		    waist="Aswang Sash",
@@ -656,7 +657,7 @@ function init_gear_sets()
 
     --you want to put tp bonus and + to hp here for stronger cures, smn skill won't matter this is for healing wards mostly
     sets.midcast.Pet.TPBloodPactWard = set_combine(sets.smnskill,{
-	    head="Apogee Crown +1",
+	    head="Apogee Crown",
 	    hands="Apogee Mitts",
 	    body="Apogee Dalmatica",
 	    legs="Enticer's Pants",
@@ -670,7 +671,7 @@ function init_gear_sets()
     sets.midcast.Pet.DebuffBloodPactWard.Acc = set_combine(sets.midcast.Pet.DebuffBloodPactWard,pet.petmabacc)
    
     sets.midcast.Pet.PhysicalBloodPactRage = { --does physical damage only, like pred claws and spinning dive and volt strike
-        head="Apogee Crown +1",
+        head="Apogee Crown",
         hands={ name="Helios gloves" },
     	body="Convoker's Doublet +1",
         legs={ name="Helios Spats", augments={ 'Blood Pact Dmg.+6' }},
@@ -690,7 +691,7 @@ function init_gear_sets()
 	    hands="Apogee Mitts"
     })
     sets.midcast.Pet.HybridBloodPactRage = { --At this time is only your flaming crush set
-        head="Apogee Crown +1",
+        head="Apogee Crown",
      --    hands={ name="Helios gloves" },
     	-- body="Helios jacket",
      --    legs="Helios spats",
@@ -699,12 +700,12 @@ function init_gear_sets()
         sub="Vox Grip",
         ammo="Seraphicaller",
         neck="Eidolon Pendant +1",
-        waist="Moepapa stone",
+        waist="Caller's Sash",
         left_ear="Domesticator earring",
         right_ear="Influx earring",
         left_ring="Fervor Ring",
         right_ring="Evoker's ring",
-        back="Conveyance cape",
+        back=conveyance,
         hands={ name="Helios gloves" },
 		body="Convoker's Doublet +1",
 	    legs={ name="Helios Spats", augments={ 'Blood Pact Dmg.+6' }},

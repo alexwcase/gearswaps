@@ -46,15 +46,46 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
     gear.RAbullet = "Adlivun Bullet"
-    gear.WSbullet = "Eminent Bullet"
-    gear.MAbullet = "Bronze Bullet"
-    gear.QDbullet = "Animikii Bullet"
-	gear.WScape = {name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-1','"Phantom Roll" ability delay -1','Weapon skill damage +4%'}}
+    gear.WSbullet = "Orichalc. bullet"
+    gear.MAbullet = "Orichalc. Bullet"
+    -- gear.MAbullet = "Bronze Bullet"
+    -- gear.QDbullet = "Animikii Bullet"
+    gear.QDbullet = "Adlivun Bullet"
+	gear.WScape = {name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4','"Phantom Roll" ability delay -2'}}
 	gear.PRcape = {name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+1','Enmity-2','"Phantom Roll" ability delay -5'}}
     options.ammo_warning_limit = 15
 
+    gear.taeon = {
+    	acc={
+    		tights={name="Taeon tights", augments={'Accuracy+22', '"Triple Atk."+1'}},
+    		boots={name="Taeon boots", augments={'Accuracy+12', '"Triple Atk."+2'}}
+   		}
+	}
+
 
     -- Additional local binds
+    --Melee rolls --
+    send_command('bind ^%numpad1 input /ja "Fighter\'s Roll"')
+    send_command('bind ^%numpad2 input /ja "Chaos Roll"')
+    send_command('bind ^%numpad3 input /ja "Hunter\'s Roll"')
+    send_command('bind !%numpad1 input /ja "Samurai Roll"')
+
+    --Mage Rolls--
+    send_command('bind ^%numpad4 input /ja "Wizard\'s Roll" ')
+    -- send_command('bind ^%numpad5 input /pet "Heel" ')
+    -- send_command('bind ^%numpad6 input /pet "Heel" ')
+
+    --Misc. Rolls --
+    send_command('bind ^%numpad7 input /pet "Heel" ')
+    send_command('bind ^%numpad8 input /ja "Corsair\'s Roll"')
+    send_command('bind ^%numpad9 input /ja "Bolter\'s Roll" ')
+    send_command('bind ^%numpad0 input /ja "Double Up" ')
+
+
+    -- send_command('bind !%delete input /ja "Reward"')
+    -- send_command('bind !%pagedown input /ja "Unleash"')
+    -- send_command('bind !%end input /pet "Spur"')
+
 end
 
 
@@ -88,10 +119,10 @@ function init_gear_sets()
 	sets.Obi.Dark = {waist='Hachirin-no-Obi'}
 
 	
-	sets.precast.CorsairRoll = {head="Lanun Tricorne +1",hands="Chasseur's Gants +1", ring2="Barataria Ring", legs="Desultor Tassets", back=gear.PRcape}
+	sets.precast.CorsairRoll = {head="Lanun Tricorne",hands="Chasseur's Gants", ring2="Barataria Ring", legs="Desultor Tassets", back=gear.PRcape}
 	
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +1"})
-	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +1"})
+	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes"})
 	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +1"})
 	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
 	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
@@ -158,11 +189,32 @@ function init_gear_sets()
 		head="Fugacity Beret +1",neck="Deviant Necklace",ear1="Novio Earring",ear2="Friomisi Earring",
 		body="Rawhide Vest",hands="Pursurer's Cuffs",ring1="Arvina Ringlet +1",ring2=gear.ElementalRing,
 		back=gear.WScape,waist=gear.ElementalObi,legs="Shned. Tights +1",feet="Lanun Bottes +1"}
-	
-	sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
-		head="Pixie Hairpin +1",neck="Deviant Necklace",ear1="Moonshade Earring",ear2="Friomisi Earring",
-		body="Rawhide Vest",hands="Pursurer's Cuffs",ring1=gear.ElementalRing,ring2="Archon Ring",
+
+	sets.precast.WS['Savage Blade'] = {ammo=gear.MAbullet,
+		head="Fugacity Beret +1",neck="Deviant Necklace",ear1="Novio Earring",ear2="Friomisi Earring",
+		body="Rawhide Vest",hands="Pursurer's Cuffs",ring1="Arvina Ringlet +1",ring2=gear.ElementalRing,
 		back=gear.WScape,waist=gear.ElementalObi,legs="Shned. Tights +1",feet="Lanun Bottes +1"}
+	
+	-- sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
+	-- 	head="Pixie Hairpin +1",neck="Deviant Necklace",ear1="Moonshade Earring",ear2="Friomisi Earring",
+	-- 	body="Rawhide Vest",hands="Pursurer's Cuffs",ring1=gear.ElementalRing,ring2="Archon Ring",
+	-- 	back=gear.WScape,waist=gear.ElementalObi,legs="Shned. Tights +1",feet="Lanun Bottes +1"}	
+
+	sets.precast.WS['Leaden Salute'] = {
+		ammo=gear.MAbullet,
+		head="Pixie Hairpin +1",
+		neck="Atzintli Necklace",
+		ear1="Moonshade Earring",
+		ear2="Friomisi Earring",
+		body="Rawhide Vest",
+		hands="Pursuer's Cuffs",
+		ring1="Acumen Ring",
+		ring2="Garuda Ring",
+		back=gear.WScape,
+		waist=gear.ElementalObi,
+		legs={name="Taeon tights", augments={"Mag. Acc.+11", '"Mag. Atk. Bns."+11'}},
+		feet={name="Taeon boots", augments={"Mag. Acc.+10", '"Mag. Atk. Bns."+10'}}
+	}
 		
 	sets.precast.WS['Aeolian Edge'] = {ammo=gear.QDbullet,
 		head="Fugacity Beret +1",neck="Deviant Necklace",ear1="Novio Earring",ear2="Friomisi Earring",
@@ -182,36 +234,71 @@ function init_gear_sets()
 	sets.midcast.CorsairShot = {ammo=gear.QDbullet,
 		head="Blood Mask",neck="Deviant Necklace",ear1="Novio Earring",ear2="Friomisi Earring",
 		body="Rawhide Vest",hands="Taeon Gloves",ring1="Fenrir Ring +1",ring2=gear.ElementalRing,
-		back=gear.WScape,waist=gear.ElementalObi,legs="Shned. Tights +1",feet="Chass. Bottes +1"}
+		back=gear.WScape,waist=gear.ElementalObi,legs="Shned. Tights +1",feet="Chass. Bottes"}
 
-	sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
-		head="Blood Mask",neck="Deviant Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Chasseur's Frac +1",hands="Chasseur's Gants +1",ring1="Garuda Ring",ring2=gear.ElementalRing,
-		back=gear.WScape,waist=gear.ElementalObi,legs="Shned. Tights +1",feet="Chass. Bottes +1"}
+	-- sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
+	-- 	head="Blood Mask",neck="Deviant Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+	-- 	body="Chasseur's Frac +1",hands="Chasseur's Gants +1",ring1="Garuda Ring",ring2=gear.ElementalRing,
+	-- 	back=gear.WScape,waist=gear.ElementalObi,legs="Shned. Tights +1",feet="Chass. Bottes"}
+	sets.midcast.CorsairShot.Acc = {
+		ammo=gear.QDbullet,
+		head="Blood Mask",
+		neck="Deviant Necklace",
+		ear1="Lifestorm Earring",
+		ear2="Psystorm Earring",
+		body="Chasseur's Frac +1",
+		hands="Chasseur's Gants +1",
+		ring1="Garuda Ring",
+		ring2=gear.ElementalRing,
+		back=gear.WScape,
+		waist=gear.ElementalObi,
+		legs="Shned. Tights +1",
+		feet="Chass. Bottes"}
 
 	sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
 		head="Blood Mask",neck="Deviant Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
 		body="Chasseur's Frac +1",hands="Thur. Gloves +1",ring1="Stormsoul Ring",ring2="Garuda Ring",
-		back=gear.WScape,waist=gear.ElementalObi,legs="Lanun Culottes +1",feet="Chass. Bottes +1"}
+		back=gear.WScape,waist=gear.ElementalObi,legs="Lanun Culottes +1",feet="Chass. Bottes"}
 
 	sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
 
 	-- Ranged gear
 	sets.midcast.RA = {ammo=gear.RAbullet,
-		head="Pursuer's Beret",neck="Ocachi Gorget",ear1="Volley Earring",ear2="Clearview Earring",
-		body="Pursuer's Doublet",hands="Lanun Gants +1",ring1="Rajas Ring",ring2="Haverton Ring",
-		back=gear.WScape,waist="Impulse Belt",legs="Chas. Culottes +1",feet="Scopuli Nails +1"}
+		head="Pursuer's Beret",
+		neck="Ocachi Gorget",
+		ear1="Volley Earring",
+		ear2="Clearview Earring",
+		body="Pursuer's Doublet",
+		hands="Lanun Gants +1",
+		ring1="Rajas Ring",
+		ring2="Haverton Ring",
+		back=gear.WScape,
+		waist="Impulse Belt",
+		legs="Chas. Culottes +1",
+		feet="Scopuli Nails +1"
+	}
 		
 	sets.midcast.TS = {ammo=gear.RAbullet,
 		head="Chass. Tricorne +1",neck="Ocachi Gorget",ear1="Volley Earring",ear2="Clearview Earring",
 		body="Chasseur's Frac +1",hands="Lanun Gants +1",ring1="Rajas Ring",ring2="Haverton Ring",
 		back=gear.WScape,waist="Impulse Belt",legs="Chas. Culottes +1",feet="Scopuli Nails +1"}
 
-	sets.midcast.RA.Acc = {ammo=gear.RAbullet,
-		head="Chass. Tricorne +1",neck="Iqabi Necklace",ear1="Volley Earring",ear2="Clearview Earring",
-		body="Chasseur's Frac +1",hands="Buremte Gloves",ring1="Hajduk Ring",ring2="Haverton Ring",
-		back=gear.WScape,waist="Eschan Stone",legs="Lanun Culottes +1",feet="Scopuli Nails +1"}
+	sets.midcast.RA.Acc = {
+		ammo=gear.RAbullet,
+		head="Chass. Tricorne",
+		neck="Waylayer's Scarf +1",
+		ear1="Volley Earring",
+		ear2="Clearview Earring",
+		body="Chasseur's Frac +1",
+		hands="Chasseur's gants",
+		ring1="Hajduk Ring",
+		ring2="Hajduk Ring",
+		back=gear.WScape,
+		waist="Eschan Stone",
+		legs="Pursuer's pants",
+		feet="Pursuer's gaiters"
+	}
 	
 
 
@@ -231,7 +318,7 @@ function init_gear_sets()
 	sets.idle.Town = {ammo=gear.QDbullet,
 		head="Chass. Tricorne +1",neck="Deviant Necklace",ear1="Novio Earring",ear2="Friomisi Earring",
 		body="Pursuer's Doublet",hands="Pursuer's Cuffs",ring1="Rajas Ring",ring2="Haverton Ring",
-		back=gear.WScape,waist="Eschan Stone",legs="Chas. Culottes +1",feet="Chass. Bottes +1"}
+		back=gear.WScape,waist="Eschan Stone",legs="Chas. Culottes +1",feet="Chass. Bottes"}
 		
 
 	-- Defense sets
@@ -243,7 +330,7 @@ function init_gear_sets()
 	sets.defense.MDT = {
 	head="Fugacity Beret +1",neck="Twilight Torque",
 		body="Lanun Frac +1",hands="Taeon Gloves",ring1="Minerva's Ring",ring2="Archonm Ring",
-		back="Shadow Mantle",waist="Flume Belt",legs="Chas. Culottes +1",feet="Chass. Bottes +1"}
+		back="Shadow Mantle",waist="Flume Belt",legs="Chas. Culottes +1",feet="Chass. Bottes"}
 	
 
 	sets.Kiting = {feet="Skadi's Jambeaux +1"}
@@ -257,30 +344,84 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
 	-- Normal melee group
-	sets.engaged.Melee = {ammo=gear.RAbullet,
-		head="Taeon Chapeau",neck="Iqabi Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",
-		body="Mekosu. Harness",hands="Chasseur's Gants +1",ring1="Rajas Ring",ring2="Mars's Ring",
-		back="Bleating Mantle",waist="Windbuffet Belt",legs="Taeon Tights",feet="Lanun Bottes +1"}
+	sets.engaged.Melee = {
+		ammo=gear.RAbullet,
+		head="Rawhide Mask",
+		neck="Asperity Necklace",
+		ear1="Steelflash Earring",
+		ear2="Bladeborn Earring",
+		body="Rawhide Vest",
+		hands={name="Taeon gloves", augments={'"Triple Atk."+2'}},
+		ring1="Rajas Ring",
+		ring2="Vehemence Ring",
+		back="Bleating Mantle",
+		waist="Chiner's Belt +1",
+		legs=gear.taeon.acc.tights,
+		feet=gear.taeon.acc.boots
+	}
 	
-	sets.engaged.Acc = {ammo=gear.RAbullet,
-		head="Ejekamal Mask",neck="Iqabi Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",
-		body="Mekosu. Harness",hands="Chasseur's Gants +1",ring1="Rajas Ring",ring2="Mars's Ring",
-		back="Bleating Mantle",waist="Windbuffet Belt",legs="Kaabnax Trousers",feet="Lanun Bottes +1"}
+	sets.engaged.Acc = {
+		ammo=gear.RAbullet,
+		head="Ejekamal Mask",
+		neck="Subtlety Spec.",
+		ear1="Steelflash Earring",
+		ear2="Bladeborn Earring",
+		body="Mekosu. Harness",
+		hands="Chasseur's Gants",
+		ring1="Enlivened Ring",
+		ring2="Cacoethic Ring",
+		back="Bleating Mantle",
+		waist="Anguinus Belt",
+		legs=gear.taeon.acc.tights,
+		feet=gear.taeon.acc.boots
+	}
 
-	sets.engaged.Melee.DW = {ammo=gear.RAbullet,
-		head="Taeon Chapeau",neck="Iqabi Necklace",ear1="Steelflash Earring",ear2="Suppanomimi",
-		body="Lanun Frac +1",hands="Lanun Gants +1",ring1="Rajas Ring",ring2="Mars's Ring",
-		back="Bleating Mantle",waist="Windbuffet Belt",legs="Taeon Tights",feet="Lanun Bottes +1"}
+	sets.engaged.Melee.DW = {		
+		ammo=gear.RAbullet,
+		head="Rawhide Mask",
+		neck="Asperity Necklace",
+		ear1="Steelflash Earring",
+		ear2="Bladeborn Earring",
+		body="Rawhide Vest",
+		hands={name="Taeon gloves", augments={'"Triple Atk."+2'}},
+		ring1="Rajas Ring",
+		ring2="Vehemence Ring",
+		back="Bleating Mantle",
+		waist="Chiner's Belt +1",
+		legs=gear.taeon.acc.tights,
+		feet=gear.taeon.acc.boots
+	}
 
-	sets.engaged.Acc.DW = {ammo=gear.RAbullet,
-		head="Ejekamal Mask",neck="Iqabi Necklace",ear1="Steelflash Earring",ear2="Suppanomimi",
-		body="Lanun Frac +1",hands="Lanun Gants +1",ring1="Rajas Ring",ring2="Mars's Ring",
-		back="Bleating Mantle",waist="Windbuffet Belt",legs="Kaabnax Trousers",feet="Lanun Bottes +1"}
+	sets.engaged.Acc.DW = {
+		ammo=gear.RAbullet,
+		head="Rawhide Mask",
+		neck="Subtlety spec.",
+		ear1="Steelflash Earring",
+		ear2="Bladeborn Earring",
+		body="Mekosu. Harness",
+		hands="Chasseur's Gants",
+		ring1="Enlivened Ring",
+		ring2="Cacoethic Ring",
+		back="Bleating Mantle",
+		waist="Anguinus Belt",
+		legs=gear.taeon.acc.tights,
+		feet=gear.taeon.acc.boots
+	}
 
-	sets.engaged.Ranged = {ammo=gear.RAbullet,
-		head="Pursuer's Beret. Tricorne +1",neck="Ocachi Gorget",ear1="Clearview Earring",ear2="Volley Earring",
-		body="Pursuer's Doublet",hands="Lanun Gants +1",ring1="Rajas Ring",ring2="Haverton Ring",
-		back=gear.WScape,waist="Impulse Belt",legs="Chas. Culottes +1",feet="Scopuli Nails +1"}
+	sets.engaged.Ranged = {
+		ammo=gear.RAbullet,
+		head="Pursuer's Beret",
+		neck="Ocachi Gorget",
+		ear1="Clearview Earring",
+		ear2="Volley Earring",
+		body="Pursuer's Doublet",
+		hands="Pursuer's cuffs",
+		ring1="Hajduk Ring",
+		ring2="Hajduk Ring",
+		back=gear.WScape,
+		waist="Impulse Belt",
+		legs="Pursuer's pants",
+		feet="Pursuer's Gaiters"}
 		
 	sets.engaged.TS = {ammo=gear.RAbullet,
 		head="Chass. Tricorne +1",neck="Ocachi Gorget",ear1="Clearview Earring",ear2="Volley Earring",

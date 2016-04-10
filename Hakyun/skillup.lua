@@ -7,9 +7,9 @@ res = require 'resources'
 ---if you cant use the spell it will not use it
 user_settings = {
     user_spells = {
-        Healing = T{'Cure'},
-        Geomancy = T{},
-        Enhancing = T{},
+        Healing = T{'Cure II'},
+        Geomancy = T{'Indi-Poison', 'Indi-Voidance'},
+        Enhancing = T{'Protect', 'Shell'},
         Ninjutsu = T{},
         Singing = T{},
         Blue = T{},
